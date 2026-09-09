@@ -3,9 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Productos | Territorio360</title>
-    <meta name="description" content="Productos cartográficos para líneas de base, presentaciones, ploteo y geoinformación para proyectos ambientales.">
+    <meta name="description" content="Mapas para líneas de base, presentaciones, ploteo y geoinformación para proyectos ambientales en Chile.">
+
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      .product-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .product-icon {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--blue-dark);
+        background: var(--lime);
+      }
+
+      .product-icon svg {
+        width: 23px;
+        height: 23px;
+      }
+    </style>
   </head>
 
   <body>
@@ -13,6 +39,7 @@
       <div class="container">
         <nav>
           <a class="logo" href="index.html">territorio<span>360</span></a>
+
           <div class="nav-links">
             <a href="index.html">Inicio</a>
             <a href="productos.html">Productos</a>
@@ -22,10 +49,10 @@
 
         <div class="page-header-content">
           <div class="eyebrow">Productos</div>
-          <h1>Cartografía para avanzar con tu proyecto.</h1>
+          <h1>Cartografía a tu medida, sin vueltas.</h1>
           <p>
-            Selecciona el servicio que necesitas. Cada encargo se adapta a la
-            información disponible, territorio, formato y plazo requerido.
+            Elige el tipo de mapa que necesitas y cotiza según el alcance de tu
+            proyecto, información disponible y plazo requerido.
           </p>
         </div>
       </div>
@@ -34,54 +61,92 @@
     <main>
       <section>
         <div class="container">
+          <div class="eyebrow">Servicios cartográficos</div>
+          <h2>Mapas claros, personalizados y accesibles.</h2>
+
           <div class="products-grid">
             <article class="product">
-              <div class="number">01</div>
+              <div class="product-top">
+                <div class="number">01</div>
+                <div class="product-icon">
+                  <i data-lucide="map"></i>
+                </div>
+              </div>
+
               <h3>Mapas para líneas de base</h3>
+
               <p>
                 Cotiza mapas para los componentes ambientales de Estudios y
-                Declaraciones de Impacto Ambiental. Ofrezco paquetes
-                personalizables entre 10 y 60 mapas.
+                Declaraciones de Impacto Ambiental. Elaboro paquetes
+                personalizables entre 10 y 60 mapas, según los antecedentes y
+                requerimientos de tu proyecto.
               </p>
+
               <div class="price">Desde 2 UF</div>
             </article>
 
             <article class="product">
-              <div class="number">02</div>
+              <div class="product-top">
+                <div class="number">02</div>
+                <div class="product-icon">
+                  <i data-lucide="presentation"></i>
+                </div>
+              </div>
+
               <h3>Mapas para presentaciones e informes</h3>
+
               <p>
-                Elaboro mapas personalizables con distintas paletas de colores,
-                gráficas y diseños que ayudan a contextualizar presentaciones,
-                informes y propuestas.
+                Elaboro mapas personalizados para contextualizar presentaciones,
+                informes y propuestas. Adapto paletas de colores, gráficas,
+                simbología y diseño visual al objetivo de tu proyecto.
               </p>
+
               <div class="price">Desde 0,5 UF</div>
             </article>
 
             <article class="product">
-              <div class="number">03</div>
+              <div class="product-top">
+                <div class="number">03</div>
+                <div class="product-icon">
+                  <i data-lucide="printer"></i>
+                </div>
+              </div>
+
               <h3>Mapas personalizados para ploteo</h3>
+
               <p>
                 Elaboro mapas en distintos tamaños y formatos para impresión,
-                exhibición, oficinas, reuniones y presentaciones territoriales.
+                exhibición, oficinas, reuniones, talleres y presentaciones
+                territoriales.
               </p>
+
               <div class="price">Desde 1 UF</div>
             </article>
 
             <article class="product">
-              <div class="number">04</div>
+              <div class="product-top">
+                <div class="number">04</div>
+                <div class="product-icon">
+                  <i data-lucide="database"></i>
+                </div>
+              </div>
+
               <h3>Geodatabase y KMZ para proyectos</h3>
+
               <p>
                 Elaboro y ordeno Geodatabase y archivos KMZ para el ingreso de
-                proyectos, considerando estructura, atributos, proyección y
+                proyectos, considerando estructura, atributos, proyección y los
                 requerimientos de geoinformación aplicables.
               </p>
+
               <div class="price">Cotización según alcance</div>
             </article>
           </div>
 
           <p class="note">
-            El servicio de geoinformación se prepara según los antecedentes del
-            proyecto y los requisitos aplicables del proceso de evaluación.
+            Si ya cuentas con la información necesaria, puedo preparar las
+            primeras entregas en pocos días hábiles. El plazo final depende de la
+            cantidad de mapas y complejidad del encargo.
           </p>
         </div>
       </section>
@@ -90,14 +155,23 @@
         <div class="container">
           <div class="eyebrow">Cotización</div>
           <h2>Cuéntame qué necesitas.</h2>
-          <p>Indica área de estudio, producto requerido, formato y plazo estimado.</p>
-          <a class="button" href="contacto.html">Ir a contacto</a>
+          <p>
+            Indica área de estudio, producto requerido, formato de entrega y
+            plazo estimado.
+          </p>
+          <a class="button" href="contacto.html">Solicitar cotización</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">© 2026 Territorio360 · Cartografía y soluciones territoriales</div>
+      <div class="container">
+        © 2026 Territorio360 · Cartografía y soluciones territoriales
+      </div>
     </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
   </body>
   </html>
