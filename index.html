@@ -3,259 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mapas a pedido y cartografía profesional | Territorio360</title>
-    <meta name="description" content="Mapas a pedido, cartografía temática y soluciones SIG para proyectos, informes y presentaciones en Chile.">
-
-    <style>
-      :root {
-        --ink: #184e77;
-        --green: #1a759f;
-        --lime: #b5e48c;
-        --sand: #f5fbf6;
-        --white: #ffffff;
-        --muted: #50738a;
-        --teal: #34a0a4;
-        --emerald: #76c893;
-      }
-
-      * { box-sizing: border-box; }
-
-      html { scroll-behavior: smooth; }
-
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        color: var(--ink);
-        background: var(--sand);
-        line-height: 1.55;
-      }
-
-      .container {
-        width: min(1120px, 90%);
-        margin: auto;
-      }
-
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 22px 0;
-      }
-
-      .logo {
-        font-size: 1.35rem;
-        font-weight: 800;
-        letter-spacing: -.7px;
-      }
-
-      .logo span { color: var(--green); }
-
-      nav a {
-        color: var(--ink);
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .hero {
-        min-height: 650px;
-        color: white;
-        background:
-          radial-gradient(circle at 80% 20%, rgba(181, 228, 140, .28), transparent 25%),
-          linear-gradient(135deg, #184e77, #1a759f);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        width: 520px;
-        height: 520px;
-        right: -130px;
-        bottom: -220px;
-        border: 1px solid rgba(255, 255, 255, .25);
-        border-radius: 45% 55% 60% 40%;
-        transform: rotate(28deg);
-        box-shadow:
-          0 0 0 55px rgba(255, 255, 255, .05),
-          0 0 0 110px rgba(255, 255, 255, .04);
-      }
-
-      .hero nav,
-      .hero-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero nav a { color: white; }
-      .hero .logo span { color: var(--lime); }
-
-      .hero-content {
-        padding: 105px 0 120px;
-        max-width: 760px;
-      }
-
-      .eyebrow {
-        color: var(--teal);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: .78rem;
-        font-weight: 800;
-      }
-
-      .hero .eyebrow { color: var(--lime); }
-
-      h1 {
-        font-size: clamp(2.8rem, 6vw, 5.6rem);
-        line-height: .98;
-        letter-spacing: -3px;
-        margin: 18px 0 25px;
-      }
-
-      h2 {
-        font-size: clamp(2rem, 4vw, 3.4rem);
-        line-height: 1.05;
-        letter-spacing: -1.7px;
-        margin: 0;
-      }
-
-      .hero p {
-        font-size: 1.22rem;
-        max-width: 630px;
-        color: rgba(255, 255, 255, .88);
-      }
-
-      .button {
-        display: inline-block;
-        padding: 15px 23px;
-        margin-top: 18px;
-        border-radius: 7px;
-        background: var(--lime);
-        color: #184e77;
-        text-decoration: none;
-        font-weight: 800;
-      }
-
-      section { padding: 90px 0; }
-
-      .intro {
-        display: grid;
-        grid-template-columns: 1fr 1.25fr;
-        gap: 90px;
-        align-items: start;
-      }
-
-      .intro p {
-        font-size: 1.18rem;
-        color: var(--muted);
-        margin-top: 8px;
-      }
-
-      .services { background: var(--white); }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        margin-top: 42px;
-      }
-
-      .card {
-        border: 1px solid #c9e4dc;
-        border-radius: 10px;
-        padding: 30px;
-        min-height: 210px;
-      }
-
-      .number {
-        color: var(--teal);
-        font-weight: 800;
-        font-size: .95rem;
-      }
-
-      h3 {
-        font-size: 1.35rem;
-        margin: 22px 0 9px;
-      }
-
-      .card p,
-      .step p {
-        color: var(--muted);
-        margin: 0;
-      }
-
-      .process {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-top: 45px;
-      }
-
-      .step {
-        border-top: 3px solid var(--teal);
-        padding-top: 18px;
-      }
-
-      .step strong {
-        display: block;
-        font-size: 1.25rem;
-        margin-bottom: 8px;
-      }
-
-      .contact {
-        background: var(--ink);
-        color: white;
-        text-align: center;
-      }
-
-      .contact .eyebrow { color: var(--lime); }
-
-      .contact p {
-        color: rgba(255, 255, 255, .80);
-        font-size: 1.16rem;
-      }
-
-      footer {
-        padding: 27px 0;
-        background: #123d60;
-        color: rgba(255, 255, 255, .72);
-        font-size: .9rem;
-      }
-
-      @media (max-width: 720px) {
-        nav a { display: none; }
-
-        .hero-content { padding: 72px 0 100px; }
-
-        .intro,
-        .cards,
-        .process {
-          grid-template-columns: 1fr;
-          gap: 20px;
-        }
-
-        section { padding: 65px 0; }
-      }
-    </style>
+    <title>Territorio360 | Mapas a pedido y cartografía profesional</title>
+    <meta name="description" content="Cartografía a pedido para estudios ambientales, informes, presentaciones y proyectos territoriales en Chile.">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <header class="hero">
       <div class="container">
         <nav>
-          <div class="logo">territorio<span>360</span></div>
-          <a href="#contacto">Solicitar cotización →</a>
+          <a class="logo" href="index.html">territorio<span>360</span></a>
+          <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <a href="contacto.html">Contacto</a>
+          </div>
         </nav>
 
         <div class="hero-content">
           <div class="eyebrow">Cartografía · SIG · Territorio</div>
           <h1>Mapas que hacen visible tu proyecto.</h1>
           <p>
-            Diseñamos mapas a pedido, cartografía temática y soluciones
-            geoespaciales para proyectos, informes, estudios y presentaciones
-            en Chile.
+            Elaboro cartografía a pedido para estudios ambientales, informes,
+            presentaciones y proyectos territoriales en Chile.
           </p>
-          <a class="button" href="#contacto">Cuéntanos tu proyecto</a>
+          <a class="button" href="productos.html">Ver productos</a>
         </div>
       </div>
     </header>
@@ -264,105 +36,58 @@
       <section>
         <div class="container intro">
           <h2>Información territorial clara, útil y bien diseñada.</h2>
-
           <div>
             <p>
-              En Territorio360 transformamos datos, ideas y territorios en mapas
-              comprensibles y visualmente profesionales.
+              Transformo datos, ideas y territorios en mapas profesionales,
+              comprensibles y listos para usar.
             </p>
             <p>
-              Trabajamos con consultoras, municipios, empresas, investigadores y
+              Trabajo con consultoras, empresas, municipios, investigadores y
               personas que necesitan comunicar información geográfica con precisión.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="services">
+      <section>
         <div class="container">
-          <div class="eyebrow">Servicios</div>
-          <h2>Mapas hechos para tu necesidad.</h2>
+          <div class="eyebrow">Servicios principales</div>
+          <h2>Cartografía adaptada a cada proyecto.</h2>
 
           <div class="cards">
             <article class="card">
               <div class="number">01</div>
-              <h3>Mapas a pedido</h3>
-              <p>
-                Mapas personalizados según tu área de estudio, información
-                disponible y objetivo de comunicación.
-              </p>
+              <h3>Líneas de base</h3>
+              <p>Paquetes de mapas para componentes ambientales, DIA y EIA.</p>
             </article>
 
             <article class="card">
               <div class="number">02</div>
-              <h3>Cartografía temática</h3>
-              <p>
-                Mapas ambientales, territoriales, demográficos, de infraestructura
-                y muchas otras variables.
-              </p>
+              <h3>Informes y presentaciones</h3>
+              <p>Mapas con diseño, simbología y paletas ajustadas a tu proyecto.</p>
             </article>
 
             <article class="card">
               <div class="number">03</div>
-              <h3>Mapas para informes</h3>
-              <p>
-                Cartografía clara y lista para incorporar en estudios,
-                presentaciones, expedientes o publicaciones.
-              </p>
+              <h3>Geoinformación</h3>
+              <p>Preparación de Geodatabase y KMZ para el ingreso de proyectos.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="container">
-          <div class="eyebrow">Cómo trabajamos</div>
-          <h2>De la pregunta al mapa final.</h2>
-
-          <div class="process">
-            <div class="step">
-              <strong>1. Cuéntanos tu idea</strong>
-              <p>
-                Indica qué quieres mostrar, dónde está el área de estudio y para
-                qué usarás el mapa.
-              </p>
-            </div>
-
-            <div class="step">
-              <strong>2. Definimos la propuesta</strong>
-              <p>
-                Revisamos datos, alcance, formato y plazo para enviarte una
-                cotización.
-              </p>
-            </div>
-
-            <div class="step">
-              <strong>3. Recibes tu cartografía</strong>
-              <p>
-                Entregamos un mapa listo para informe, impresión, presentación o
-                publicación digital.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact" id="contacto">
+      <section class="contact-section">
         <div class="container">
           <div class="eyebrow">Hablemos</div>
           <h2>¿Necesitas un mapa a pedido?</h2>
-          <p>Cuéntanos brevemente tu proyecto y te responderemos con una propuesta.</p>
-          <a class="button" href="mailto:territorio360.contacto@gmail.com">
-            Escribir a Territorio360
-          </a>
+          <p>Cuéntame brevemente tu proyecto y te responderé con una propuesta.</p>
+          <a class="button" href="contacto.html">Solicitar cotización</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">
-        © 2026 Territorio360 · Cartografía y soluciones territoriales
-      </div>
+      <div class="container">© 2026 Territorio360 · Cartografía y soluciones territoriales</div>
     </footer>
   </body>
   </html>
