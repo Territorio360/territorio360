@@ -357,3 +357,7 @@
     grid-column: 1 / -1;
     align-self: end;
   }
+    .product-preview--ploteo img {
+    object-fit: contain;
+    object-position: center;
+  }
