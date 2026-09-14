@@ -253,4 +253,107 @@
   .logo-name {
     color: white;
   }
+.product {
+    position: relative;
+    overflow: hidden;
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
 
+  .product-preview {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    place-items: end start;
+    padding: 18px;
+    background: var(--blue-dark);
+    clip-path: inset(0 100% 0 0);
+    pointer-events: none;
+    transition: clip-path .55s cubic-bezier(.2, .75, .25, 1);
+  }
+
+  .product-preview img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-preview--double img:first-child {
+    width: 50%;
+    right: auto;
+  }
+
+  .product-preview--double img:nth-child(2) {
+    width: 50%;
+    left: auto;
+  }
+
+  .product-preview::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(180deg, transparent 45%, rgba(18, 61, 96, .78));
+  }
+
+  .product-preview span {
+    position: relative;
+    z-index: 2;
+    color: rgba(255, 255, 255, .92);
+    font-size: .65rem;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(24, 78, 119, .18);
+  }
+
+  .product:hover .product-preview {
+    clip-path: inset(0);
+  }
+
+  .product-preview--formats {
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 12px;
+  }
+
+  .format-badge {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 4px;
+    width: 100%;
+    padding: 18px 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    background: rgba(255, 255, 255, .14);
+  }
+
+  .format-badge svg {
+    width: 36px;
+    height: 36px;
+    margin: auto;
+  }
+
+  .format-badge--earth svg {
+    color: var(--lime);
+  }
+
+  .format-badge--gdb svg {
+    color: var(--teal);
+  }
+
+  .format-badge small {
+    color: rgba(255, 255, 255, .75);
+    font-size: .7rem;
+  }
+
+  .product-preview--formats span {
+    grid-column: 1 / -1;
+    align-self: end;
+  }
